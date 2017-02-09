@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
 
-
+/* Added a comment*/
 @Entity
 public class AddressBook extends Observable {
 
@@ -32,7 +32,7 @@ public class AddressBook extends Observable {
     {
         for (BuddyInfo bud : buddies)
         {
-            if (bud.getName().equals(buddy.getName()) &&  bud.getAddress().equals(buddy.getAddress()));
+            if(bud.getName().equals(buddy.getName()) &&  bud.getAddress().equals(buddy.getAddress()))
             {
                 return true;
             }
