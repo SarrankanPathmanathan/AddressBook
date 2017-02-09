@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
 
-/* Added a comment*/
+/* Added a comment */
 @Entity
 public class AddressBook extends Observable {
 
