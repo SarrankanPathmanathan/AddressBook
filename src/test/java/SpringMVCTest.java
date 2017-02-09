@@ -1,6 +1,3 @@
-/**
- * Created by sarrankanpathmanatha on 2/2/2017.
- */
 
 import AddressBook.Application;
 import AddressBook.AddressBook;
@@ -60,8 +57,8 @@ public class SpringMVCTest {
         assertThat(response.getStatusCode(),equalTo(HttpStatus.CREATED));
 
         BuddyInfo buddy = new BuddyInfo("Sarran","111 Street");
-        ResponseEntity<String> response2 = template.postForEntity(base.toString()+"/Books/1",buddy,String.class);
-        assertThat(response.getStatusCode(),equalTo(HttpStatus.CREATED));
+        ResponseEntity<String> response2 = template.postForEntity(base.toString()+"/Books",buddy,String.class);
+        assertThat(response2.getStatusCode(),equalTo(HttpStatus.CREATED));
     }
 
     @Test
