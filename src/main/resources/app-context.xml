@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+      <bean id="mainFrame" class="AddressBook.MyJFrame" init-method="init">
+            <property name ="title"><value>My Address Book</value></property>
+            <property name="contentPane"><ref bean="mainPanel"></ref></property>
+      </bean>
+      <bean id="mainPanel" class="AddressBook.MyJPanel" init-method="init">
+            <property name ="axis"><value>1</value></property>
+            <property name="panelComponents">
+                  <list>
+                        <ref bean="textField1"/>
+                        <ref bean="textField2" />
+                        <ref bean="textField3"/>
+                        <ref bean="buttonPanel"/>
+                  </list>
+            </property>
+      </bean>
+      <bean id="buttonPanel" class="AddressBook.MyJPanel" init-method="init">
+            <property name="axis"><value>0</value></property>
+            <property name="panelComponents">
+                    <list>
+                          <ref bean="button1"/>
+                    </list>
+             </property>
+      </bean>
+      <bean id="textField1" class="AddressBook.MyJTextField" init-method="init" />
+      <bean id="textField2" class="AddressBook.MyJTextField" init-method="init" />
+      <bean id="textField3" class="AddressBook.MyJTextField" init-method="init" />
+      <bean id="button1" class="AddressBook.MyJButton" init-method="init" >
+            <property name="actionListener">
+                  <ref bean ="myButtonActionListener"/>
+            </property>
+            <property name="text">
+                  <value>Add Buddy</value>
+            </property>
+      </bean>
+      <bean id="myButtonActionListener" class="AddressBook.MyActionListener" >
+          <property name="buddyName"><ref bean="textField1"></ref></property>
+          <property name="buddyAddress"><ref bean="textField2"></ref></property>
+          <property name="contacts"><ref bean="textField3"></ref></property>
+      </bean>
+
+</beans>
