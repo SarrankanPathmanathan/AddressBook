@@ -111,7 +111,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>AddressBook.CRUDApplication</mainClass>
+                            <mainClass>AddressBook.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
