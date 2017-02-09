@@ -2,8 +2,7 @@
 import AddressBook.Application;
 import AddressBook.AddressBook;
 import AddressBook.BuddyInfo;
-
-
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import java.net.URL;
@@ -38,7 +37,7 @@ public class SpringMVCTest {
 
     @Test
     public void addBuddy() throws Exception {
-        BuddyInfo buddy = new BuddyInfo("Sarran","111 Street");
+        BuddyInfo buddy = new BuddyInfo("Sarran","111 Street","SP");
         ResponseEntity<String> response = template.postForEntity(base.toString()+"/buddies",buddy,String.class);
         assertThat(response.getStatusCode(),equalTo(HttpStatus.CREATED));
     }
@@ -56,7 +55,7 @@ public class SpringMVCTest {
         ResponseEntity<String> response = template.postForEntity(base.toString()+"/Books",addressBook,String.class);
         assertThat(response.getStatusCode(),equalTo(HttpStatus.CREATED));
 
-        BuddyInfo buddy = new BuddyInfo("Sarran","111 Street");
+        BuddyInfo buddy = new BuddyInfo("Sarran","111 Street","SP");
         ResponseEntity<String> response2 = template.postForEntity(base.toString()+"/Books",buddy,String.class);
         assertThat(response2.getStatusCode(),equalTo(HttpStatus.CREATED));
     }
@@ -66,6 +65,18 @@ public class SpringMVCTest {
         template.delete(base.toString()+ "/Books/1/");
         ResponseEntity<String> response = template.getForEntity(base.toString()+"/Books/1",String.class);
         assertThat(response.getStatusCode(),equalTo(HttpStatus.NOT_FOUND));
+    }
+
+    @Test
+    public void checkAddedAttributeNickname() throws Exception{
+        BuddyInfo buddy = new BuddyInfo("JayRudra","111 Street","Jey");
+        assertEquals(buddy.getNickname(),"Jey");
+        ResponseEntity<String> response2 = template.postForEntity(base.toString()+"/Books",buddy,String.class);
+        assertThat(response2.getStatusCode(),equalTo(HttpStatus.CREATED));
+
+
+
+
     }
 
 

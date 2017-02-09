@@ -1,6 +1,3 @@
-/**
- * Created by sarrankanpathmanatha on 1/12/2017.
- */
 
 package AddressBook;
 
@@ -18,16 +15,26 @@ public class BuddyInfo {
     private Integer id;
     private String name;
     private String address;
+    private String nickname;
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     public BuddyInfo()
     {
 
     }
 
-    public BuddyInfo(String name, String address )
+    public BuddyInfo(String name, String address, String nickname )
     {
         this.name = name;
         this.address = address;
+        this.nickname = nickname;
     }
 
     public Integer getId(){ return id;}
@@ -51,6 +58,6 @@ public class BuddyInfo {
     }
 
     @Override
-    public String toString(){ return "Buddy [id=" + id + ", name=" + name + "]"; };
+    public String toString(){ return "Buddy [id=" + id + ", name=" + name + "]"; }
 
 }

@@ -3,11 +3,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
-/**
- * Created by sarrankanpathmanatha on 1/12/2017.
- */
-
 import AddressBook.AddressBook;
 import AddressBook.BuddyInfo;
 
@@ -18,15 +13,13 @@ public class AddressBookTest {
     @Before
     public void setUp() throws Exception {
         addressBook = new AddressBook();
-        buddy = new BuddyInfo("Jane","170 Blue Street");
+        buddy = new BuddyInfo("Jane","170 Blue Street","J");
     }
 
     @After
     public void tearDown() throws Exception {
         buddy = null;
         addressBook = null;
-        assertNull(buddy);
-        assertNull(addressBook);
     }
     @Test
     public void addBuddy() throws Exception {
