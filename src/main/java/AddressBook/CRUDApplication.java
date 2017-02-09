@@ -16,10 +16,10 @@ public class CRUDApplication {
     private static final Logger log = LoggerFactory.getLogger(CRUDApplication.class);
 
 
-  //  public static void main(String[] args) {
+    public static void main(String[] args) {
        // SpringApplication.run(CRUDApplication.class);
     }
 
 
 
-//}
+}
