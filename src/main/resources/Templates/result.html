@@ -1,12 +1,16 @@
 <!DOCTYPE HTML>
+<!--suppress ALL -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>AdddressBook</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Result</h1>
-<p th:text="'Address Book Name: ' + ${Books.id}" />
-<a href="/Books">Submit another message</a>
+<h1>Added Buddy</h1>
+<!--/*@thymesVar id="buddy" type="BuddyInfo"*/-->
+<p th:text="'name: ' + ${buddy.name}" />
+<p th:text="'address: ' + ${buddy.address}" />
+<p th:text="'nickname: ' + ${buddy.nickname}" />
+<a href="/">Add Another Buddy</a>
 </body>
 </html>
