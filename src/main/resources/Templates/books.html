@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AddressBook</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jQueryController.js"></script>
+</head>
+<body>
+<h1>Address Book App</h1>
+
+<p>Enter Buddy</p>
+<!--/*@thymesVar id="buddy" type="BuddyInfo"*/-->
+<form action="#" th:action="@{/}" th:object="${buddy}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Address: <input type="text" th:field="*{address}" /></p>
+    <p>NickName: <input type="text" th:field="*{nickname}" /></p>
+    <p><input type="submit" value="Create Buddy" /></p>
+</form>
+
+
+<!--/*@thymesVar id="buddies" type="java.lang.Iterable"*/-->
+<p th:each ="existingBuddy : ${buddies}"
+   th:text="|Name : ${existingBuddy.name} Address: ${existingBuddy.address} NickName: ${existingBuddy.nickname}|"/>
+
+</body>
+</html>
