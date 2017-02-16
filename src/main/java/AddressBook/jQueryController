@@ -1,0 +1,9 @@
+$(document).ready(function() {
+    $.ajax({
+        url: "http://localhost:8080"
+    }).then(function(data) {
+        $('.buddy-name').append(data.name);
+        $('.buddy-address').append(data.address);
+        $('.buddy-nickname').append(data.nickname);
+    });
+});
