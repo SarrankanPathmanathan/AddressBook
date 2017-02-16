@@ -1,7 +1,3 @@
-/**
- * Created by sarrankanpathmanatha on 1/12/2017.
- */
-
 package AddressBook;
 
 import java.util.*;
@@ -11,12 +7,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
 
-/* Added a comment */
 @Entity
 public class AddressBook extends Observable {
 
     private Integer id;
+    private String name;
     private Collection<BuddyInfo> buddies;
+
+    public AddressBook(String name)
+    {
+        this.name = name;
+        buddies = new ArrayList<BuddyInfo>();
+    }
 
     public AddressBook()
     {
@@ -71,6 +73,14 @@ public class AddressBook extends Observable {
         this.buddies = buddies;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 
 }
